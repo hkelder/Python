@@ -8,12 +8,12 @@ MAX_SHIFT_SIZE = 26
 
 def decryptionMode():
     while True:
-        print("Do you wish to encrypt or decrypt?")
-        mode = input().lower()
-        if mode in ['encrypt', 'e', 'decrypt', 'd']:
+        print("Do you wish to encrypt or decrypt or brute force?")
+        mode = input()
+        if mode in ['encrypt', 'e', 'decrypt', 'd', 'brute', 'b']:  # Can be simplified using ().split
             return mode
         else:
-            print("Enter one of the following: encrypt, e, decrypt, d")
+            print("Enter one of the following: encrypt, e, decrypt, d, brute, b")
 
 
 def userMessage():
@@ -59,7 +59,14 @@ def caesarsMessage(mode, message, shift):
 
 mode = decryptionMode()
 message = userMessage()
-shift = caesarShift()
+if mode[0] != 'b':
+    shift = caesarShift()
 
 print("Your translated text is:")
-print(caesarsMessage(mode, message, shift))
+if mode[0] != 'b':
+    print(caesarsMessage(mode, message, shift))
+else:
+    for shift in range(1, MAX_SHIFT_SIZE + 1):
+        print(shift, caesarsMessage('decrypt', message, shift))
+        # If 1st parameter is just --mode-- then the shift number is '26 minus original shift number'.
+        # e.g Original shift is 20, then 6th iteration will have your translated text.
