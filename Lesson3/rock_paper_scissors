@@ -1,44 +1,45 @@
 # Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input),
 # compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)
 import sys
+import random
 
 print("Welcome to Rock, Paper, Scissors!\n")
 
 
 def first_user_input():
-    print("Choose your weapon:")
+    print("Choose rock, paper or scissors:")
     return input().lower()
 
 
-def second_user_input():
-    print("Choose your weapon:")
-    return input().lower()
+def computer_input():
+    computerChoice = ['rock', 'scissors', 'paper']
+    return random.choice(computerChoice)
 
 
-def comparison(firstUserInput, secondUserInput):
-    if firstUserInput == secondUserInput:
-        return "It's a tie!"
+def comparison(firstUserInput, computerInput):
+    if firstUserInput == computerInput:
+        return firstUserInput + " vs " + computerInput + " = It's a tie!"
     elif firstUserInput == "rock":
-        if secondUserInput == "scissors":
-            return "Rock wins!"
+        if computerInput == "scissors":
+            return firstUserInput + " vs " + computerInput + " = Rock wins!"
         else:
-            return "Paper wins!"
+            return firstUserInput + " vs " + computerInput + " = Paper wins!"
     elif firstUserInput == "scissors":
-        if secondUserInput == "paper":
-            return "Scissors win!"
+        if computerInput == "paper":
+            return firstUserInput + " vs " + computerInput + " = Scissors win!"
         else:
-            return "Rock wins!"
+            return firstUserInput + " vs " + computerInput + " =  Rock wins!"
     elif firstUserInput == "paper":
-        if secondUserInput == "rock":
-            return "Paper wins!"
+        if computerInput == "rock":
+            return firstUserInput + " vs " + computerInput + " = Paper wins!"
         else:
-            return "Scissors win!"
+            return firstUserInput + " vs " + computerInput + " = Scissors win!"
     else:
         return "Invalid input! Please make sure to enter rock, paper or scissors."
         sys.exit()
 
 
 firstUserInput = first_user_input()
-secondUserInput = second_user_input()
+computerInput = computer_input()
 
-print(comparison(firstUserInput, secondUserInput))
+print(comparison(firstUserInput, computer_input()))
