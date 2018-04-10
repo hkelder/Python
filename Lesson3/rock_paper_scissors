@@ -1,0 +1,44 @@
+# Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input),
+# compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)
+import sys
+
+print("Welcome to Rock, Paper, Scissors!\n")
+
+
+def first_user_input():
+    print("Choose your weapon:")
+    return input().lower()
+
+
+def second_user_input():
+    print("Choose your weapon:")
+    return input().lower()
+
+
+def comparison(firstUserInput, secondUserInput):
+    if firstUserInput == secondUserInput:
+        return "It's a tie!"
+    elif firstUserInput == "rock":
+        if secondUserInput == "scissors":
+            return "Rock wins!"
+        else:
+            return "Paper wins!"
+    elif firstUserInput == "scissors":
+        if secondUserInput == "paper":
+            return "Scissors win!"
+        else:
+            return "Rock wins!"
+    elif firstUserInput == "paper":
+        if secondUserInput == "rock":
+            return "Paper wins!"
+        else:
+            return "Scissors win!"
+    else:
+        return "Invalid input! Please make sure to enter rock, paper or scissors."
+        sys.exit()
+
+
+firstUserInput = first_user_input()
+secondUserInput = second_user_input()
+
+print(comparison(firstUserInput, secondUserInput))
