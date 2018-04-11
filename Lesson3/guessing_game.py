@@ -6,26 +6,32 @@
 import random
 
 
-def random_number():
-    number = random.randint(1, 9)
-    return number
+def guessing_game():
+    randomNumber = random.randint(1, 9)
+    userGuess = 0
+    count = 0
+
+    while userGuess != "exit" and int(userGuess) != randomNumber:
+        userGuess = input("Guess a number between 1 and 9 or type exit.").lower()
+        if userGuess == "exit":
+            break
+
+        userGuess = int(userGuess)
+
+        if userGuess < 1 or userGuess > 9:
+            print("Invalid number, try again!")
+            continue
+        elif userGuess < randomNumber:
+            print("Too low, try again!")
+            count += 1
+            continue
+        elif userGuess > randomNumber:
+            print("Too high, try again!")
+            count += 1
+            continue
+        elif userGuess == randomNumber:
+            count += 1
+            print("You got it! It took you", count, "tries.")
 
 
-def user_guess():
-    print("Please enter a number between 1 and 9:")
-    return int(input())
-
-
-def comparison(randomNumber, userGuess):
-    if randomNumber == userGuess:
-        return "Well done, you're exactly right!"
-    elif randomNumber > userGuess:
-        return "Too low."
-    elif randomNumber < userGuess:
-        return "Too high."
-
-
-randomNumber = random_number()
-userGuess = user_guess()
-
-print(comparison(randomNumber, userGuess))
+guessing_game()
