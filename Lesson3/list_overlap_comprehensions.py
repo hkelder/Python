@@ -9,13 +9,10 @@
 
 import random
 
-firstList = range(1, random.randint(1, 30))
-secondList = range(random.randint(1, 10), random.randint(10, 75))
-commonList = []
-
-for element in firstList:
-    if element in secondList:
-        commonList.append(element)
+firstList = random.sample(range(30), 15)
+secondList = random.sample(range(40), 20)
+commonList = [element for element in firstList if element in secondList]
+commonList.sort()
 
 
 print("Common elements between 2 lists: " + str(commonList))
