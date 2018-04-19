@@ -12,4 +12,5 @@ for num in a:
     if num in b:
         c.append(num)
 
+print(a)
 print(c)

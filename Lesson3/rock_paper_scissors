@@ -1,6 +1,5 @@
 # Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input),
 # compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)
-import sys
 import random
 
 print("Welcome to Rock, Paper, Scissors!\n")
@@ -36,7 +35,6 @@ def comparison(firstUserInput, computerInput):
             return firstUserInput + " vs " + computerInput + " = Scissors win!"
     else:
         return "Invalid input! Please make sure to enter rock, paper or scissors."
-        sys.exit()
 
 
 firstUserInput = first_user_input()
