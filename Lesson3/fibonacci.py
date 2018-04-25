@@ -11,11 +11,19 @@ def user_input():
 
 
 def sequence(userInput):
-    if userInput < 2:
-        return userInput
-    else:
-        return sequence(userInput - 2) + sequence(userInput - 1)
-
+    i = 1
+    if userInput == 0:
+        fiboList = []
+    elif userInput == 1:
+        fiboList = [1]
+    elif userInput == 2:
+        fiboList = [1, 1]
+    elif userInput > 2:
+        fiboList = [1, 1]
+        while i < (userInput - 1):
+            fiboList.append(fiboList[i] + fiboList[i - 1])
+            i += 1
+    return fiboList
 
 userInput = user_input()
 
