@@ -7,18 +7,18 @@ import random
 
 
 def guessing_game():
-    randomNumber = random.randint(1, 9)
+    randomNumber = random.randint(1, 30)
     userGuess = 0
     count = 0
 
     while userGuess != "exit" and int(userGuess) != randomNumber:
-        userGuess = input("Guess a number between 1 and 9 or type exit.").lower()
+        userGuess = input("Guess a number between 1 and 30 or type exit.").lower()
         if userGuess == "exit":
             break
 
         userGuess = int(userGuess)
 
-        if userGuess < 1 or userGuess > 9:
+        if userGuess < 1 or userGuess > 30:
             print("Invalid number, try again!")
             continue
         elif userGuess < randomNumber:

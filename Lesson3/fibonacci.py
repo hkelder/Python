@@ -13,17 +13,18 @@ def user_input():
 def sequence(userInput):
     i = 1
     if userInput == 0:
-        fiboList = []
+        fibo_list = []
     elif userInput == 1:
-        fiboList = [1]
+        fibo_list = [1]
     elif userInput == 2:
-        fiboList = [1, 1]
+        fibo_list = [1, 1]
     elif userInput > 2:
-        fiboList = [1, 1]
+        fibo_list = [1, 1]
         while i < (userInput - 1):
-            fiboList.append(fiboList[i] + fiboList[i - 1])
+            fibo_list.append(fibo_list[i] + fibo_list[i - 1])
             i += 1
-    return fiboList
+    return fibo_list
+
 
 userInput = user_input()
 
