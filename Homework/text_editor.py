@@ -8,7 +8,6 @@
 #
 # Help Menu: upon clicking it should generate a message box to give brief info.
 #  e.g. version of the application, probably author name....
-import random
 import tkinter
 from tkinter.filedialog import *
 from tkinter.messagebox import *
@@ -35,9 +34,9 @@ def open_file():
 
 
 def save_file():
-    file = open(TextFile, "w")
-    file.write(Area.get(1.0, END))
-    file.close()
+    path = asksaveasfilename()
+    write = open(path, mode="w")
+    write.write(TextFile.get("1.0", END))
 
 
 def close_editor():
