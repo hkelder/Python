@@ -36,7 +36,7 @@ def open_file():
 def save_file():
     path = asksaveasfilename()
     write = open(path, mode="w")
-    write.write(TextFile.get("1.0", END))
+    write.write(Area.get("1.0", END))
 
 
 def close_editor():
