@@ -7,6 +7,8 @@
 # Ask the user how strong they want their password to be. For weak passwords, pick a word or two from a list.
 import random
 
+WEAK_PASSWORD_LIST = ["123456789", "password", "987654321", "weakpassword"]
+
 
 def password_generation():
     password_characters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$€&%*()?"
@@ -15,5 +17,23 @@ def password_generation():
     return password
 
 
-print(password_generation())
+def user_choice():
+    while True:
+        choice = input("Do you want a strong or a weak password?").lower()
+        if choice in ["strong", "weak"]:
+            return choice
+        else:
+            print("Please enter one of the following: strong, weak")
 
+
+def user_password(userChoice, passwordGeneration):
+    if userChoice == "strong":
+        return passwordGeneration
+    elif userChoice == "weak":
+        return random.choice(WEAK_PASSWORD_LIST)
+
+
+userChoice = user_choice()
+passwordGeneration = password_generation()
+
+print(user_password(userChoice, passwordGeneration))
