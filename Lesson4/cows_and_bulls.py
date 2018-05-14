@@ -20,10 +20,10 @@
 import random
 
 
-def cows_and_bulls(number, userGuess):
+def cows_and_bulls(randomNumber, userGuess):
     cowbull = [0, 0]  # cows, then bulls
-    for i in range(len(number)):
-        if number[i] == userGuess[i]:
+    for i in range(len(randomNumber)):
+        if randomNumber[i] == userGuess[i]:
             cowbull[1] += 1
         else:
             cowbull[0] += 1
