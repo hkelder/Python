@@ -9,11 +9,25 @@ print("This program verifies if a number is inside a given list.")
 
 
 def element_search(ordered_list, element_to_verify):
+    start_index = 1
+    end_index = len(ordered_list) - 1
 
-    for element in ordered_list:
-        if element == element_to_verify:
+    while True:
+        middle_index = int((end_index + start_index) / 2)
+
+        if middle_index == start_index or middle_index == end_index:
+            if ordered_list[middle_index] == element_to_verify or ordered_list[end_index] == element_to_verify:
+                return True
+            else:
+                return False
+
+        middle_element = ordered_list[middle_index]
+        if middle_element == element_to_verify:
             return True
-    return False
+        elif middle_element > element_to_verify:
+            end_index = middle_index
+        else:
+            start_index = middle_index
 
 
 if __name__ == "__main__":
