@@ -5,21 +5,21 @@
 # Use binary search.
 import random
 
+print("This program verifies if a number is inside a given list.")
 
-def element_search():
-    print("This program verifies if a number is inside a given list.")
 
+def element_search(ordered_list, element_to_verify):
+
+    for element in ordered_list:
+        if element == element_to_verify:
+            return True
+    return False
+
+
+if __name__ == "__main__":
     elementList = random.sample(range(20), 10)
-    elementToBeVerified = random.randint(0, 100)
-
     elementList.sort()
+    elementToBeVerified = random.randint(0, 35)
+    print("The list: " + str(elementList) + " and the number: " + str(elementToBeVerified))
+    print(element_search(elementList, elementToBeVerified))
 
-    if str(elementToBeVerified) in str(elementList):
-        print("Number " + str(elementToBeVerified) + " is inside the list.")
-        print("The list elements are: " + str(elementList))
-    else:
-        print("Number " + str(elementToBeVerified) + " isn't inside the list.")
-        print("The list elements are: " + str(elementList))
-
-
-element_search()
