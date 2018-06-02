@@ -41,8 +41,8 @@ def comparison(old_adc_ad, old_adc_ratio, new_adc_ad, new_adc_ratio):
 
 
 def maximumAD(old_adc_ad, old_adc_ratio, new_adc_ad, new_adc_ratio):
-    old_max_ad = old_adc_ad + (old_adc_ratio * 18)
-    new_max_ad = new_adc_ad + (new_adc_ratio * 18)
+    old_max_ad = old_adc_ad + (old_adc_ratio * 17)
+    new_max_ad = new_adc_ad + (new_adc_ratio * 17)
     return (adc_name + " pure AD at level 18 was %.2f" % old_max_ad + " before 8.11\n Now it will be %.2f"
             % new_max_ad)
 
@@ -51,6 +51,7 @@ old_adc_ad = oldAdcAd()
 old_adc_ratio = oldAdcRatio()
 new_adc_ad = newAdcAd()
 new_adc_ratio = newAdcRatio()
+
 
 print('\n', comparison(old_adc_ad, old_adc_ratio, new_adc_ad, new_adc_ratio))
 print('\n', maximumAD(old_adc_ad, old_adc_ratio, new_adc_ad, new_adc_ratio))
