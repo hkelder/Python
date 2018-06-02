@@ -15,7 +15,7 @@ from tkinter.messagebox import *
 Screen = tkinter.Tk()
 Screen.title("Assignment 3")
 Screen.geometry()
-Area = Text(Screen)
+WritingSpace = Text(Screen)
 TextFile = None
 
 
@@ -25,10 +25,10 @@ def open_file():
 
     if TextFileTemporary:
         TextFile = TextFileTemporary
-        Area.grid()
-        Area.delete(1.0, END)
+        WritingSpace.grid()
+        WritingSpace.delete(1.0, END)
         file = open(TextFile, "r")
-        Area.insert(1.0, file.read())
+        WritingSpace.insert(1.0, file.read())
         file.close()
         print(TextFile)
 
@@ -36,7 +36,7 @@ def open_file():
 def save_file():
     path = asksaveasfilename()
     write = open(path, mode="w")
-    write.write(Area.get("1.0", END))
+    write.write(WritingSpace.get("1.0", END))
 
 
 def close_editor():
