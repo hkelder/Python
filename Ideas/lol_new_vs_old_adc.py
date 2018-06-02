@@ -29,20 +29,22 @@ def newAdcRatio():
 def comparison(old_adc_ad, old_adc_ratio, new_adc_ad, new_adc_ratio):
     counter = 1
     while counter < 19:
+        print("Level %.2f: " % counter + "%.2f vs " % old_adc_ad + "%.2f" % new_adc_ad)
         if old_adc_ad > new_adc_ad:
             old_adc_ad = old_adc_ad + old_adc_ratio
             new_adc_ad = new_adc_ad + new_adc_ratio
             counter += 1
+
         else:
-            return (adc_name + " AD and Ratio will be better at level: " + str(counter) +
-                    "\n The new AD will be " + str(new_adc_ad) + " versus the old AD at that level: " + str(old_adc_ad))
+            return (adc_name + " AD and Ratio will be better at level: %.2f" % counter +
+                    "\n The new AD will be %.2f" % new_adc_ad + " versus the old AD at that level %.2f" % old_adc_ad)
 
 
 def maximumAD(old_adc_ad, old_adc_ratio, new_adc_ad, new_adc_ratio):
     old_max_ad = old_adc_ad + (old_adc_ratio * 18)
     new_max_ad = new_adc_ad + (new_adc_ratio * 18)
-    return (adc_name + " pure AD at level 18 was " + str(old_max_ad) + " before 8.11\n Now it will be "
-            + str(new_max_ad))
+    return (adc_name + " pure AD at level 18 was %.2f" % old_max_ad + " before 8.11\n Now it will be %.2f"
+            % new_max_ad)
 
 
 old_adc_ad = oldAdcAd()
