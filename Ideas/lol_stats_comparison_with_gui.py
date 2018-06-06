@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 
 class Comparison:
@@ -24,23 +25,23 @@ class Comparison:
         self.new_ad_ratio = Entry()
         self.new_ad_ratio.grid(row=2, column=1)
 
-
     def compare(self):
-        oldAD = float(self.old_ad.get())
-        oldADRatio = float(self.old_ad_ratio.get())
-        newAD = float(self.new_ad.get())
-        newADRatio = float(self.new_ad_ratio.get())
+        old_ad = float(self.old_ad.get())
+        old_ad_ratio = float(self.old_ad_ratio.get())
+        new_ad = float(self.new_ad.get())
+        new_ad_ratio = float(self.new_ad_ratio.get())
         counter = 1
         while counter < 19:
-           # print("Level %.2f: " % counter + "%.2f vs " % oldAD + "%.2f" % newAD)
-            if oldAD > newAD:
-                oldAD = oldAD + oldADRatio
-                newAD = newAD + newADRatio
+           # print("Level %.2f: " % counter + "%.2f vs " % old_ad + "%.2f" % new_ad)
+            if old_ad > new_ad:
+                old_ad = old_ad + old_ad_ratio
+                new_ad = new_ad + new_ad_ratio
                 counter += 1
 
             else:
-                return (" AD and Ratio will be better at level: %.2f" % counter +
-                        "\n The new AD will be %.2f" % newAD)
+                messagebox.showinfo("Results", "AD and Ratio will be better at level: %.f" % counter +
+                        "\nThe new AD will be %.2f" % new_ad)
+                break
 
 
 app = Tk()
