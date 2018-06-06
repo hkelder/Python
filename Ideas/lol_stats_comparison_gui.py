@@ -24,23 +24,23 @@ class Comparison:
         self.new_ad_ratio = Entry()
         self.new_ad_ratio.grid(row=2, column=1)
 
-        self.oldAD = float(self.old_ad.get())
-        self.oldADRatio = float(self.old_ad_ratio.get())
-        self.newAD = float(self.new_ad.get())
-        self.newADRatio = float(self.new_ad_ratio.get())
 
     def compare(self):
+        oldAD = float(self.old_ad.get())
+        oldADRatio = float(self.old_ad_ratio.get())
+        newAD = float(self.new_ad.get())
+        newADRatio = float(self.new_ad_ratio.get())
         counter = 1
         while counter < 19:
-            # print("Level %.2f: " % counter + "%.2f vs " % old_adc_ad + "%.2f" % new_adc_ad)
-            if self.old_ad > self.new_ad:
-                self.old_ad = self.old_ad + self.old_ad_ratio
-                self.new_ad = self.new_ad + self.new_ad_ratio
+           # print("Level %.2f: " % counter + "%.2f vs " % oldAD + "%.2f" % newAD)
+            if oldAD > newAD:
+                oldAD = oldAD + oldADRatio
+                newAD = newAD + newADRatio
                 counter += 1
 
             else:
                 return (" AD and Ratio will be better at level: %.2f" % counter +
-                        "\n The new AD will be %.2f" % self.new_ad)
+                        "\n The new AD will be %.2f" % newAD)
 
 
 app = Tk()
