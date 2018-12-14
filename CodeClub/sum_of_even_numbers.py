@@ -1,0 +1,1 @@
+even_only=lambda*a:sum(i for i in a if i%2<1)
