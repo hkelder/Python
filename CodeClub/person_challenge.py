@@ -31,24 +31,3 @@ class Female(Person):
 
     def __init__(self, first, last, birth):
         super().__init__(first, last, birth)
-
-
-test = Person("Paul", "Meri", date(1997, 9, 25))
-test1 = Person("Henri", "Meri", date(2997, 9, 25))
-test2 = Person("Mart", "Meri", date(997, 9, 25))
-test3 = Person("Artur", "Meri", date(1927, 9, 25))
-test4 = Female("Anni", "Meri", date(2007, 9, 25))
-test5 = Female("Grete", "Meri", date(2997, 9, 25))
-test6 = Female("Mel", "Meri", date(997, 9, 25))
-test7 = Female("Anete", "Meri", date(1927, 9, 25))
-
-print(test)
-print(test1)
-print(test2)
-print(test3)
-print(test4)
-print(test5)
-print(test6)
-print(test7)
-
-
