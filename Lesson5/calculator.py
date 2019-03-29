@@ -12,7 +12,7 @@ def divide(x, y):  # This function divides 2 numbers
     return x / y
 
 
-def multiply(x, y):  # This function divides 2 numbers
+def multiply(x, y):  # This function multiplies 2 numbers
     return x * y
 
 
@@ -33,21 +33,22 @@ second_num = int(input("Enter second number: "))
 while choice != "7":
     if choice == "1":
         print(first_num, "+", second_num, "=", add(first_num, second_num))
-
+        break
     elif choice == "2":
         print(first_num, "-", second_num, "=", subtract(first_num, second_num))
-
+        break
     elif choice == "3":
         print(first_num, "/", second_num, "=", divide(first_num, second_num))
-
+        break
     elif choice == "4":
         print(first_num, "*", second_num, "=", multiply(first_num, second_num))
-
+        break
     elif choice == "5":
+        print("Modulo gives you the leftover from divide")
         print(first_num, "%", second_num, "=", modulo(first_num, second_num))
-
+        break
     elif choice == "6":
         print(first_num, "**", second_num, "=", exponent(first_num, second_num))
-
+        break
     else:
         break

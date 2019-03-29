@@ -5,16 +5,6 @@ import random
 print("Welcome to Rock, Paper, Scissors!\n")
 
 
-def first_user_input():
-    print("Choose rock, paper or scissors:")
-    return input().lower()
-
-
-def computer_input():
-    computerChoice = ['rock', 'scissors', 'paper']
-    return random.choice(computerChoice)
-
-
 def comparison(firstUserInput, computerInput):
     if firstUserInput == computerInput:
         return firstUserInput + " vs " + computerInput + " = It's a tie!"
@@ -37,7 +27,7 @@ def comparison(firstUserInput, computerInput):
         return "Invalid input! Please make sure to enter rock, paper or scissors."
 
 
-firstUserInput = first_user_input()
-computerInput = computer_input()
-
-print(comparison(firstUserInput, computer_input()))
+if __name__ == "__main__":
+    user_input = input("Choose rock paper scissors").lower()
+    computer_choice = random.choice(['rock', 'scissors', 'paper'])
+    print(comparison(user_input, computer_choice))

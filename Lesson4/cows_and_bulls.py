@@ -32,7 +32,7 @@ def cows_and_bulls(randomNumber, userGuess):
 
 if __name__ == "__main__":
     playing = True
-    randomNumber = str(random.randint(1000, 9999))
+    randomNumber = str((random.randint(1000, 9999)))
     userCounts = 0
 
     print("Let's play a game of Cowbull!")  # explanation for the game

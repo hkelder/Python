@@ -9,7 +9,7 @@ print("This program verifies if a number is inside a given list.")
 
 
 def element_search(ordered_list, element_to_verify):
-    start_index = 1
+    start_index = 0
     end_index = len(ordered_list) - 1
 
     while True:

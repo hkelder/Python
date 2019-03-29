@@ -1,7 +1,7 @@
 # Write a program that returns a list that contains only the elements that are common between the lists (no dupes).
 # Make sure your program works on two lists of different sizes.
 # Extra:
-# Randomly generate two lists to test this.
+# Randomly generate two lists to main.py this.
 import random
 
 a = range(1, random.randint(1, 30))
@@ -13,4 +13,5 @@ for num in a:
         c.append(num)
 
 print(a)
+print(b)
 print(c)

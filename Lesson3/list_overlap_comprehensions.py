@@ -5,7 +5,7 @@
 # Make sure your program works on two lists of different sizes.
 # Write this using at least one list comprehension.
 # Extra:
-# Randomly generate two lists to test this
+# Randomly generate two lists to main.py this
 
 import random
 
